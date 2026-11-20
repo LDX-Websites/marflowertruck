@@ -1,0 +1,197 @@
+/* Mar Flower Truck · rediseño. Colores tomados del truck: menta, verde mar, hibisco y girasol. */
+:root{
+  --mint:#BFE6D9;      /* pintura del truck */
+  --mint-soft:#E7F6F0;
+  --sea:#0F4C43;       /* texto y fondos oscuros */
+  --sea-2:#1C6B5E;
+  --pink:#C92A5A;      /* hibisco: botones */
+  --pink-soft:#F9C9D7;
+  --sun:#FFC53D;       /* girasol */
+  --white:#FFFFFF;
+  --ink:#123C36;
+  --muted:#46655F;
+  --r-lg:28px;
+  --font:'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;font-family:var(--font);font-size:17px;line-height:1.6;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.02;letter-spacing:-.025em;font-stretch:85%}
+p{margin:0}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--sea);color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none}
+.skip:focus{top:12px}
+
+/* ---------- Barra superior + toldo ---------- */
+.top{position:sticky;top:0;z-index:30}
+.top-in{display:flex;align-items:center;gap:24px;min-height:64px;background:var(--sea);color:#fff;width:100%;padding-inline:max(20px,(100% - 1180px)/2);max-width:none}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.02em;font-stretch:85%;white-space:nowrap}
+.brand-ic{width:38px;height:26px;fill:var(--mint)}
+.brand-ic circle:nth-of-type(n+3){fill:var(--pink-soft)}
+.menu{display:flex;gap:4px;margin-left:auto}
+.menu a{text-decoration:none;font-size:15px;font-weight:600;padding:8px 12px;border-radius:999px;color:#D9EFE8}
+.menu a:hover{background:rgba(255,255,255,.1);color:#fff}
+.langs{display:flex;background:rgba(255,255,255,.1);border-radius:999px;padding:3px}
+.langs button{font:inherit;font-size:13px;font-weight:700;border:0;background:none;color:#D9EFE8;padding:6px 10px;border-radius:999px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--mint);color:var(--sea)}
+/* El toldo rayado con borde ondulado, como el de un food truck */
+.awning{height:34px;background:repeating-linear-gradient(90deg,var(--mint) 0 44px,var(--white) 44px 88px);
+  -webkit-mask:radial-gradient(22px 16px at 22px 0,#000 98%,transparent) 0 18px/44px 16px repeat-x,linear-gradient(#000 0 0) top/100% 18px no-repeat;
+          mask:radial-gradient(22px 16px at 22px 0,#000 98%,transparent) 0 18px/44px 16px repeat-x,linear-gradient(#000 0 0) top/100% 18px no-repeat;
+  filter:drop-shadow(0 4px 0 rgba(15,76,67,.12));transform-origin:top}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--mint-soft);margin-top:-34px;padding:110px 0 90px;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(46px,7.2vw,98px);color:var(--sea);max-width:11ch}
+.lead{font-size:clamp(18px,1.6vw,21px);color:var(--muted);max-width:34em;margin-top:24px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:34px 0 0}
+.facts li{background:var(--white);border:2px solid var(--mint);border-radius:999px;padding:7px 16px;font-size:15px;color:var(--muted)}
+.facts b{color:var(--sea)}
+.hero-pic{position:relative;margin:0;justify-self:center;width:min(100%,500px)}
+/* Marco en forma de ventanilla del truck */
+.window{border-radius:250px 250px var(--r-lg) var(--r-lg);overflow:hidden;border:10px solid var(--white);box-shadow:0 0 0 2px var(--mint),0 30px 60px -20px rgba(15,76,67,.35);aspect-ratio:5/6;background:var(--mint)}
+.window img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.sticker{position:absolute;left:-34px;bottom:46px;width:136px;height:136px;border-radius:50%;background:var(--sun);color:var(--sea);display:grid;place-items:center;text-align:center;font-weight:800;font-size:16px;line-height:1.1;font-stretch:85%;transform:rotate(-12deg);box-shadow:0 10px 24px -8px rgba(15,76,67,.4);
+  background-image:radial-gradient(circle,transparent 58px,rgba(15,76,67,.18) 59px 60px,transparent 61px)}
+
+/* ---------- Botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;transition:transform .15s,background-color .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-pink{background:var(--pink);color:#fff}
+.btn-pink:hover{background:#B0214D}
+.btn-line{border-color:var(--sea);color:var(--sea)}
+.btn-line:hover{background:var(--sea);color:#fff}
+.btn-sea{background:var(--sea);color:#fff}
+.btn-sea:hover{background:var(--sea-2)}
+.btn-lg{min-height:58px;padding:0 32px;font-size:18px}
+
+/* ---------- Secciones ---------- */
+.sec{padding:100px 0}
+.sec-mint{background:var(--mint-soft)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:44px}
+.head h2,.faq-wrap h2,.shop h2,.about h2,.contact h2{font-size:clamp(36px,5vw,64px);color:var(--sea)}
+.head p{color:var(--muted);max-width:30em}
+
+/* Galería: tira de fotos del mismo alto; en celular se desliza de lado */
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.g{margin:0;border-radius:22px;overflow:hidden;background:var(--mint);aspect-ratio:3/4}
+.g img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.more{display:inline-block;margin-top:28px;font-weight:700;color:var(--pink);text-underline-offset:4px}
+
+/* Servicios en filas */
+.svc{list-style:none;margin:0;padding:0;border-top:2px solid var(--mint)}
+.svc li{display:grid;grid-template-columns:minmax(0,1fr) 200px auto;gap:32px;align-items:center;padding:28px 0;border-bottom:2px solid var(--mint)}
+.svc h3{font-size:clamp(24px,2.6vw,32px);color:var(--sea)}
+.svc li p:not(.price){color:var(--muted);margin-top:6px;max-width:36em}
+.price{font-size:26px;font-weight:800;color:var(--sea);font-stretch:85%;line-height:1.1}
+.price small{display:block;font-size:14px;font-weight:600;color:var(--muted);font-stretch:100%}
+.svc .btn{min-width:180px}
+
+/* Tienda */
+.shop{background:var(--sun);padding:80px 0}
+.shop-in{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.shop h2{max-width:14ch}
+.shop p{color:var(--ink);max-width:34em;margin-top:16px;font-size:18px}
+
+/* Sobre Mar */
+.about{display:grid;grid-template-columns:380px minmax(0,1fr);gap:64px;align-items:center}
+.about-pic{margin:0;aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;border:10px solid var(--pink-soft);transform:rotate(-2deg)}
+.about-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.big{font-size:clamp(19px,1.8vw,22px);margin-top:20px;max-width:32em}
+.ticks{list-style:none;padding:0;margin:28px 0 32px;display:grid;gap:12px}
+.ticks li{position:relative;padding-left:34px;color:var(--muted)}
+.ticks li::before{content:"";position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:50%;background:var(--mint) no-repeat center/12px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l2.5 2.5L10 3' fill='none' stroke='%230F4C43' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.ticks b{color:var(--sea)}
+
+/* Preguntas */
+.faq-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:48px;align-items:start}
+.faq details{background:var(--white);border-radius:20px;margin-bottom:12px;border:2px solid transparent}
+.faq details[open]{border-color:var(--mint)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 60px 20px 24px;font-weight:700;font-size:18px;color:var(--sea);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--mint-soft);display:grid;place-items:center;font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 24px 22px;color:var(--muted)}
+
+/* Contacto */
+.contact{background:var(--sea);color:#fff;padding:100px 0 110px;position:relative}
+.contact h2{color:#fff}
+.contact-in>p{color:#C9E6DD;margin-top:14px;font-size:18px}
+.channels{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.channels a{display:flex;flex-direction:column;gap:4px;text-decoration:none;background:rgba(255,255,255,.07);border:2px solid rgba(191,230,217,.25);border-radius:22px;padding:22px 22px 20px;transition:background-color .15s,border-color .15s}
+.channels a:hover{background:rgba(255,255,255,.12);border-color:var(--mint)}
+.channels b{font-size:20px;font-stretch:85%}
+.channels span{color:#C9E6DD;font-size:15px;overflow-wrap:anywhere}
+.channels li:first-child a{background:var(--mint);color:var(--sea);border-color:var(--mint)}
+.channels li:first-child span{color:var(--sea-2)}
+
+/* Pie */
+.foot{background:var(--sea);color:#C9E6DD;border-top:1px solid rgba(191,230,217,.2);padding:28px 0 36px;font-size:14px}
+.foot-in{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+.foot-brand{font-weight:800;color:#fff;font-size:18px;font-stretch:85%}
+.foot-legal{display:flex;gap:18px}
+.foot-legal button{font:inherit;background:none;border:0;color:inherit;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.foot-copy a{color:var(--mint)}
+
+/* WhatsApp flotante */
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;width:58px;height:58px;border-radius:50%;background:#1FAF55;display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(0,0,0,.35)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+/* Políticas */
+.policy{border:0;border-radius:24px;max-width:640px;width:calc(100% - 32px);padding:36px 32px 28px;color:var(--ink);font-family:var(--font)}
+.policy::backdrop{background:rgba(15,76,67,.55)}
+.policy h2{font-size:30px;color:var(--sea);margin-bottom:12px}
+.policy h3{font-size:19px;color:var(--sea);margin:20px 0 6px;font-stretch:100%;letter-spacing:0}
+.policy p{color:var(--muted);margin-bottom:8px}
+.policy-x{position:absolute;right:14px;top:12px;width:40px;height:40px;border-radius:50%;border:0;background:var(--mint-soft);color:var(--sea);font-size:24px;cursor:pointer}
+
+/* Un solo momento de movimiento: el toldo baja y el sticker gira al cargar */
+@media (prefers-reduced-motion:no-preference){
+  .awning{animation:drop .7s cubic-bezier(.3,1.4,.5,1) both}
+  .sticker{animation:spin .9s .35s cubic-bezier(.3,1.3,.5,1) both}
+  @keyframes drop{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  @keyframes spin{from{transform:rotate(-120deg) scale(.4);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:1}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1020px){
+  .menu{display:none}
+  .langs{margin-left:auto}
+  .svc li{grid-template-columns:minmax(0,1fr) auto;gap:16px 24px}
+  .svc li>div{grid-column:1/-1}
+  .channels{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .hero{padding:90px 0 70px}
+  .hero-in{grid-template-columns:1fr;gap:48px}
+  .hero-pic{width:min(100%,400px)}
+  .sticker{left:-10px;width:112px;height:112px;font-size:14px;background-image:radial-gradient(circle,transparent 47px,rgba(15,76,67,.18) 48px 49px,transparent 50px)}
+  .head{grid-template-columns:1fr;gap:14px}
+  .about{grid-template-columns:1fr;gap:40px}
+  .about-pic{max-width:340px}
+  .faq-wrap{grid-template-columns:1fr;gap:24px}
+  .shop-in{flex-direction:column;align-items:flex-start}
+  .sec{padding:72px 0}
+}
+@media (max-width:860px){
+  .grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(62vw,300px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-inline:-20px;padding-inline:20px;scroll-padding-inline:20px}
+  .g{scroll-snap-align:start;border-radius:18px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .brand span{font-size:17px}
+  .brand-ic{width:32px}
+  .top-in{gap:12px}
+  .channels{grid-template-columns:1fr}
+  .svc .btn{min-width:0}
+  .svc li{grid-template-columns:1fr}
+  .price small{display:inline;margin-right:4px}
+  .btn{width:100%}
+  .ctas .btn{width:100%}
+}
