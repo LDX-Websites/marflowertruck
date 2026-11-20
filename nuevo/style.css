@@ -131,7 +131,7 @@ p{margin:0}
 .channels li:first-child span{color:var(--sea-2)}
 
 /* Pie */
-.foot{background:var(--sea);color:#C9E6DD;border-top:1px solid rgba(191,230,217,.2);padding:28px 0 36px;font-size:14px}
+.foot{background:var(--sea);color:#C9E6DD;border-top:1px solid rgba(191,230,217,.2);padding:28px 0 100px;font-size:14px}
 .foot-in{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
 .foot-brand{font-weight:800;color:#fff;font-size:18px;font-stretch:85%}
 .foot-legal{display:flex;gap:18px}
