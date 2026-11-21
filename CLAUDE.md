@@ -2,7 +2,6 @@
 _Última actualización: 20/11/2026_
 
 - Repo GitHub `shucleleon-spec/marflowertruck` (rama `main`). Se publica solo con cada push (worker `marflowertruck`, solo archivos, sin servidor). Ya no está en GitHub Pages.
-- PC: `C:\Users\Clement\Documents\web marflower\` (actualizada el 20/11/2026 con el rediseño).
 - **Diseño actual** (rediseño aprobado): verde menta con toldo del truck, letra Bricolage Grotesque, foto en arco. Archivos: `index.html`, `style.css`, `app.js`, imágenes en `img/`. `/nuevo` redirige a `/`.
 - Idiomas: español, inglés y portugués (se guarda en `localStorage` `mft-lang`).
 - Tienda: enlaces a Square (`mar-flower-truck.square.site`); pedidos por WhatsApp.
@@ -15,7 +14,7 @@ _Última actualización: 20/11/2026_
 - Cuentas de negocio: leondigitalexperience@gmail.com. Pagos: solo Stripe.
 - No pulsar "Comenzar gratis" (Google Cloud) ni "Upgrade" (Workers). Todo debe quedar dentro del plan gratis.
 - Firma "Diseñado por LDX" solo con permiso del dueño del negocio, y con el logo de LDX.
-- GitHub (rama `main`) es la versión buena. La carpeta de la PC (`C:\Users\Clement\Documents\web …`) es una copia: al cambiar algo, copiarlo también allí.
+- GitHub (rama `main`) es la única versión de la web (y del servidor, si la web tiene uno). Todo se publica desde ahí. No hay copias en la PC: no copiar cambios a ninguna carpeta local.
 - Nada de bloquear clic derecho, F12 o arrastrar imágenes: no protege nada y molesta (se quitó de todas el 20/11/2026).
 
 ## Seguridad común (revisada el 20/11/2026 con una prueba de ataque)
